@@ -26,8 +26,8 @@ const ADDRESS = "Marrakech 45000, Maroc";
 const activities = [
   {
     id: 1,
-    name: "Buggy CAN-AM 2 places",
-    image: "",
+    name: "Mohamed salah",
+    image: "https://c.files.bbci.co.uk/A179/production/_99473314_mohamedsalah01.jpg",
     promo: true,
   },
   {
