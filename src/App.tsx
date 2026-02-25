@@ -32,60 +32,23 @@ const activities = [
   },
   {
     id: 2,
-    name: "Quad 700 Raptor",
-    image: "https://images.unsplash.com/photo-1565992441121-4367c2967103?auto=format&fit=crop&q=80&w=800",
+    name: "Balade en dromadaire",
+    image: "https://images.unsplash.com/photo-1523496922380-91d5af098ad5?auto=format&fit=crop&q=80&w=800",
     promo: true,
   },
   {
     id: 3,
-    name: "Moto Cross Yamaha",
-    image: "https://images.unsplash.com/photo-1444491741275-3747c53c99b4?auto=format&fit=crop&q=80&w=800",
+    name: "Dîner & Camp Désert",
+    image: "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=800",
     promo: true,
   },
   {
     id: 4,
-    name: "Balade en dromadaire",
-    image: "https://images.unsplash.com/photo-1523496922380-91d5af098ad5?auto=format&fit=crop&q=80&w=800",
+    name: "Soirée Bivouac",
+    image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=800",
     promo: true,
   }
 ];
-
-const CountdownTimer = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    hours: 2,
-    minutes: 45,
-    seconds: 0
-  });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.seconds > 0) return { ...prev, seconds: prev.seconds - 1 };
-        if (prev.minutes > 0) return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        if (prev.hours > 0) return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        return prev;
-      });
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-    <div className="flex gap-4 justify-center md:justify-start">
-      {[
-        { label: 'Heures', value: timeLeft.hours },
-        { label: 'Min', value: timeLeft.minutes },
-        { label: 'Sec', value: timeLeft.seconds }
-      ].map((item, i) => (
-        <div key={i} className="flex flex-col items-center">
-          <div className="bg-orange-600/80 backdrop-blur-sm text-white w-12 h-12 rounded-lg flex items-center justify-center font-bold text-xl border border-orange-400/30">
-            {String(item.value).padStart(2, '0')}
-          </div>
-          <span className="text-[10px] uppercase tracking-wider mt-1 text-orange-200 font-medium">{item.label}</span>
-        </div>
-      ))}
-    </div>
-  );
-};
 
 export default function App() {
   const openWhatsApp = (activityName?: string) => {
@@ -101,10 +64,16 @@ export default function App() {
       <nav className="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-md border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center">
-              <Ghost className="text-white" size={24} />
+            <div className="w-12 h-12 bg-[#8B0000] rounded-xl flex items-center justify-center overflow-hidden border border-white/10 shadow-lg group-hover:scale-105 transition-transform">
+              <div className="relative w-full h-full flex items-center justify-center">
+                <div className="absolute w-9 h-9 bg-[#D4AF37] rounded-full"></div>
+                <div className="relative z-10 w-6 h-6 flex items-center justify-center">
+                  <div className="w-4 h-1.5 bg-white absolute top-1 left-1 rounded-full transform -rotate-12"></div>
+                  <div className="w-2 h-5 bg-white absolute top-1 right-2 rounded-full transform rotate-12"></div>
+                </div>
+              </div>
             </div>
-            <span className="font-bold text-xl tracking-tighter uppercase italic">Marrakech Adventure</span>
+            <span className="font-black text-2xl tracking-tighter uppercase italic text-white">Marrakech <span className="text-orange-600">Travel Hub</span></span>
           </div>
           <button 
             onClick={() => openWhatsApp()}
@@ -143,17 +112,9 @@ export default function App() {
             <h1 className="text-5xl md:text-8xl font-black italic uppercase leading-[0.9] tracking-tighter mb-6">
               Unveil the <span className="text-orange-600">Magic</span> of Morocco
             </h1>
-            <p className="text-lg md:text-xl text-zinc-300 mb-8 max-w-lg leading-relaxed">
+            <p className="text-lg md:text-xl text-zinc-300 mb-12 max-w-lg leading-relaxed">
               Vivez l'adrénaline pure au cœur du désert. Buggy, Quad et Moto Cross pour une aventure inoubliable.
             </p>
-
-            <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl mb-8 max-w-md">
-              <div className="flex items-center gap-3 mb-4">
-                <Clock className="text-orange-500" size={20} />
-                <span className="text-sm font-bold uppercase tracking-wider text-orange-200">Offre Spéciale : -20% aujourd'hui</span>
-              </div>
-              <CountdownTimer />
-            </div>
 
             <button 
               onClick={() => openWhatsApp()}
@@ -234,7 +195,7 @@ export default function App() {
           <div className="relative">
             <div className="aspect-square rounded-3xl overflow-hidden border border-white/10">
               <img 
-                src="https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=1000" 
+                src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1000" 
                 alt="Adventure"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -289,16 +250,27 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div className="lg:col-span-2">
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center">
-                  <Ghost className="text-white" size={24} />
+                <div className="w-12 h-12 bg-[#8B0000] rounded-xl flex items-center justify-center overflow-hidden border border-white/10 shadow-lg">
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <div className="absolute w-9 h-9 bg-[#D4AF37] rounded-full"></div>
+                    <div className="relative z-10 w-6 h-6 flex items-center justify-center">
+                      <div className="w-4 h-1.5 bg-white absolute top-1 left-1 rounded-full transform -rotate-12"></div>
+                      <div className="w-2 h-5 bg-white absolute top-1 right-2 rounded-full transform rotate-12"></div>
+                    </div>
+                  </div>
                 </div>
-                <span className="font-bold text-2xl tracking-tighter uppercase italic">Marrakech Adventure</span>
+                <span className="font-black text-2xl tracking-tighter uppercase italic text-white">Marrakech <span className="text-orange-600">Travel Hub</span></span>
               </div>
               <p className="text-zinc-500 max-w-sm mb-8">
                 Votre partenaire de confiance pour des aventures mémorables à Marrakech. Buggy, Quad, Moto et Dromadaire.
               </p>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
+                <a 
+                  href="https://www.instagram.com/marrakechtravelhub/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors"
+                >
                   <Instagram size={20} />
                 </a>
                 <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors">
@@ -340,7 +312,7 @@ export default function App() {
           </div>
 
           <div className="pt-8 border-t border-white/5 text-center text-zinc-600 text-sm">
-            <p>&copy; {new Date().getFullYear()} Marrakech Adventure. Tous droits réservés.</p>
+            <p>&copy; {new Date().getFullYear()} Marrakech Travel Hub. Tous droits réservés.</p>
           </div>
         </div>
       </footer>
