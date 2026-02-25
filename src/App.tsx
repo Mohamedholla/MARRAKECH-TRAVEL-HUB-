@@ -27,7 +27,7 @@ const activities = [
   {
     id: 1,
     name: "Buggy CAN-AM 2 places",
-    image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800",
+    image: "",
     promo: true,
   },
   {
