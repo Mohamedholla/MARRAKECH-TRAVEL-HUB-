@@ -20,32 +20,32 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 
 const WHATSAPP_NUMBER = "212687401599";
-const EMAIL = "MOHMEDSITOUMGHAR@GMAIL.COM";
+const EMAIL = "marrakechtravelhub@gmail.com";
 const ADDRESS = "Marrakech 45000, Maroc";
 
 const activities = [
   {
     id: 1,
     name: "Buggy CAN-AM 2 places",
-    image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1623972860045-f2d0accbcf38?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     promo: true,
   },
   {
     id: 2,
     name: "Balade en dromadaire",
-    image: "https://images.unsplash.com/photo-1523496922380-91d5af098ad5?auto=format&fit=crop&q=80&w=800",
+    image: "https://plus.unsplash.com/premium_photo-1661962388409-eb7a041606fb?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     promo: true,
   },
   {
     id: 3,
     name: "Dîner & Camp Désert",
-    image: "https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1527419105721-af1f23c86dec?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     promo: true,
   },
   {
     id: 4,
-    name: "Soirée Bivouac",
-    image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=800",
+    name: "Marché Berbère",
+    image: "https://images.unsplash.com/photo-1672753325594-6ed7cd706380?q=80&w=800&auto=format&fit=crop",
     promo: true,
   }
 ];
@@ -89,9 +89,9 @@ export default function App() {
       <section className="relative h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&q=80&w=1920" 
-            alt="Marrakech Desert"
-            className="w-full h-full object-cover opacity-60"
+            src="https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?auto=format&fit=crop&q=80&w=2560" 
+            alt="Thrilling Sahara Sunset"
+            className="w-full h-full object-cover opacity-70"
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
@@ -195,8 +195,8 @@ export default function App() {
           <div className="relative">
             <div className="aspect-square rounded-3xl overflow-hidden border border-white/10">
               <img 
-                src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=1000" 
-                alt="Adventure"
+                src="https://images.unsplash.com/photo-1489493585363-d6943429ef21?auto=format&fit=crop&q=80&w=1000" 
+                alt="Marrakech Adventure"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
